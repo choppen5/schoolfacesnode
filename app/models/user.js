@@ -4,14 +4,22 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
 // define the schema for our user model
+var orgSchema = mongoose.Schema({
+    name    : String,
+    street  : String,
+    city    : String,
+    zip     : String,
+    url     : String
+});
+
 var userSchema = mongoose.Schema({
 
     local            : {
         email        : String,
         password     : String,
-        firstname    : String,
-        lastname     : String
-    }
+        name         : String,
+        _orgid       : {type: mongoose.Schema.ObjectId, ref: 'org'}
+    }   
 
 });
 

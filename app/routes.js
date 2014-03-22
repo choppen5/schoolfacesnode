@@ -27,8 +27,16 @@ module.exports = function(app, passport) {
 	// show the signup form
 	app.get('/signup', function(req, res) {
 
+		var organizations = [
+			{ name: "CIS Deavila", id: "100"},
+			{ name: "Pacific Primary", id: "101"}	
+		];
+
 		// render the page and pass in any flash data if it exists
-		res.render('signup.ejs', { message: req.flash('signupMessage') });
+		res.render('signup.ejs', { 
+				message: 		req.flash('signupMessage') ,
+				organizations:  organizations
+			});
 	});
 
 	// process the signup form
