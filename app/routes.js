@@ -1,4 +1,5 @@
 // app/routes.js
+var Organization = require('../app/models/organization');
 module.exports = function(app, passport) {
 
 	// =====================================
@@ -27,16 +28,21 @@ module.exports = function(app, passport) {
 	// show the signup form
 	app.get('/signup', function(req, res) {
 
-		var organizations = [
-			{ name: "CIS Deavila", id: "100"},
-			{ name: "Pacific Primary", id: "101"}	
-		];
+
+		//var test = Organization.find({}).limit(10);
+
+		Organization.find({}, function(err, org) {
+
+			res.render('signup.ejs', { 
+				message: 		req.flash('signupMessage') ,
+				organizations:  org
+			});
+
+			
+		});
 
 		// render the page and pass in any flash data if it exists
-		res.render('signup.ejs', { 
-				message: 		req.flash('signupMessage') ,
-				organizations:  organizations
-			});
+
 	});
 
 	// process the signup form
