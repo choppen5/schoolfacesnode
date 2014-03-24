@@ -25,9 +25,9 @@
 	<!-- LOGIN FORM -->
 	<form action="/signup" method="post">
 		<div class="form-group">
-			<select class="orginazation"> 
+			<select class="orginazation" name="school"> 
 			  <% organizations.forEach(function(school){ %>
-    				<option value=<%= school.id %>  ><%= school.name %> </option>				
+    				<option value=<%= school._id %> ><%= school.name %> </option>				
   			  <% }) %>
   			</select
 		</div>

@@ -29,10 +29,8 @@ module.exports = function(app, passport) {
 	app.get('/signup', function(req, res) {
 
 
-		//var test = Organization.find({}).limit(10);
-
+		//only render signup after consulting the database for Organizations... don't love this.  Prob better to do requests on the client then?
 		Organization.find({}, function(err, org) {
-
 			res.render('signup.ejs', { 
 				message: 		req.flash('signupMessage') ,
 				organizations:  org

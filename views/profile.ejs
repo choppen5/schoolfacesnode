@@ -2,39 +2,67 @@
 <!doctype html>
 <html>
 <head>
-	<title>Node Authentication</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="">
+
+  <title>SchoolFaces</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
-		body 		{ padding-top:80px; word-wrap:break-word; }
+		 .row {
+        	margin: 5px;
+      	 }
+
+         .family {
+           width: 50%;
+           height: 50%;
+         }
 	</style>
 </head>
 <body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SchoolFaces</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+    	<ul class="nav navbar-nav">
+    		<li><a href="/logout">Logout</a></li>
+    	</ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 <div class="container">
+    <div class="row">
+		<div class="col-sm-2 col-md-2">
+            <img src="https://lh4.googleusercontent.com/-fSqQrlETILU/AAAAAAAAAAI/AAAAAAAAAHs/WNNSnrI6rHo/photo.jpg"
+            alt="" class="img-rounded img-responsive" />
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <blockquote>
+                <p><%= user.local.name %>
+                  <button type="button" class="btn btn-primary btn-xs">Parent</button>
+                </p> 
 
-	<div class="page-header text-center">
-		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
-		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
-	</div>
+                <small><cite title="Source Title">Room 100 1st grade <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+            </blockquote>
+            <p> 
+                <i class="glyphicon glyphicon-envelope"></i> <%= user.local.email %>
+                <br/> 
+                <i class="glyphicon glyphicon-phone"></i> +14155773411
+                <br/> 
+                <i class="glyphicon glyphicon-globe"></i> www.bootsnipp.com 
+            </p>
+        </div> 
+     </row> <!-- end row -->
+</div>  <!-- end container -->
 
-	<div class="row">
 
-		<!-- LOCAL INFORMATION -->
-		<div class="col-sm-6">
-			<div class="well">
-				<h3><span class="fa fa-user"></span> <%= user.local.name %></h3>
-
-					<p>
-						<strong>id</strong>: <%= user._id %><br>
-						<strong>email</strong>: <%= user.local.email %><br>
-						<strong>password</strong>: <%= user.local.password %>
-					</p>
-
-			</div>
-		</div>
-
-	</div>
-
-</div>
 </body>
 </html>
