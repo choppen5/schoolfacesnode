@@ -4,25 +4,120 @@
 <head>
 	<title>Node Authentication</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
 	<style>
-		body 		{ padding-top:80px; }
+		
 	</style>
 </head>
 <body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SchoolFaces</a>
+    </div>
+
+    
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 <div class="container">
-
-<div class="col-sm-6 col-sm-offset-3">
-
-	<h1><span class="fa fa-sign-in"></span> Signup</h1>
-
-	<!-- show any messages that come back with authentication -->
+<h1>Join School Faces</h1>
 	<% if (message.length > 0) { %>
 		<div class="alert alert-danger"><%= message %></div>
 	<% } %>
 
 
-	<!-- LOGIN FORM -->
+<div class="row">
+  <div class="col-md-6">
+  	School
+  	<select class="form-control">
+			<% organizations.forEach(function(school){ %>
+    				<option value=<%= school._id %> ><%= school.name %> </option>				
+  			<% }) %>
+  	</select>
+  </div>
+  <div class="col-md-6">
+  	Class
+  	<select class="form-control">
+      <option value="husker">Room #100 - 1st grade</option>
+      <option value="starbuck">Room #15 - Kindergarten</option>
+  	</select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+	<form action="/signup" method="post" role="form">
+	   <div class="form-group">
+	    <label for="name">Name</label>
+	    <input type="text" class="form-control" name="name" placeholder="Full Name">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="exampleInputEmail1">Email address</label>
+	    <input type="email" class="form-control" name="email" placeholder="Enter email">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Password</label>
+	    <input type="password" class="form-control" name="password" placeholder="Password">
+	  </div>
+	  <button type="submit" class="btn btn-default">Sign Up</button>
+	</form>
+  </div>
+	
+  <div class="col-md-6"> 	
+  	<h3>See who's already joined</h3>
+ 
+ 		<div class="row">
+          <div class="col-md-4">
+            <a class="thumbnail">
+              <img src="http://fng.hotcw.com/images/sil-female.png">
+            </a>
+            Terri J. Marasco
+          </div>
+
+
+
+          <div class="col-md-4">
+            <a class="thumbnail">
+              <img src="http://fng.hotcw.com/images/sil-female.png">
+            </a>
+            Terri J. Marasco
+          </div>
+
+
+
+          <div class="col-md-4">
+            <a class="thumbnail">
+              <img src="http://fng.hotcw.com/images/sil-female.png">
+            </a>
+            Terri J. Marasco
+          </div>
+        </div> <!-- end see whos already joined row -->
+
+
+
+  </div>
+
+</div>
+
+ 
+
+<!-- div class="col-sm-6 col-sm-offset-3">
+
+	<h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+
+	<% if (message.length > 0) { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+
+
+
 	<form action="/signup" method="post">
 		<div class="form-group">
 			<select class="orginazation" name="school"> 
@@ -46,7 +141,7 @@
 
 		<button type="submit" class="btn btn-warning btn-lg">Signup</button>
 	</form>
-
+-->
 	<hr>
 
 	<p>Already have an account? <a href="/login">Login</a></p>

@@ -40,27 +40,40 @@
 </nav>
 <div class="container">
     <div class="row">
-		<div class="col-sm-2 col-md-2">
-            <img src="https://lh4.googleusercontent.com/-fSqQrlETILU/AAAAAAAAAAI/AAAAAAAAAHs/WNNSnrI6rHo/photo.jpg"
-            alt="" class="img-rounded img-responsive" />
+        <div class="col-sm-1">
+          You
+          <button type="button" class="btn btn-primary btn-xs">Parent</button>
+        </div>  
+    		<div class="col-sm-2 col-md-2">
+                <img src="http://fng.hotcw.com/images/sil-male.png" 
+                alt="" class="img-rounded img-responsive" />
+
         </div>
         <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p><%= user.local.name %>
-                  <button type="button" class="btn btn-primary btn-xs">Parent</button>
-                </p> 
-
-                <small><cite title="Source Title">Room 100 1st grade <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-            </blockquote>
-            <p> 
-                <i class="glyphicon glyphicon-envelope"></i> <%= user.local.email %>
-                <br/> 
-                <i class="glyphicon glyphicon-phone"></i> +14155773411
-                <br/> 
-                <i class="glyphicon glyphicon-globe"></i> www.bootsnipp.com 
-            </p>
+                <blockquote>
+                    <p><%= user.local.name %></p> 
+                </blockquote>
+                <p> 
+                    <i class="glyphicon glyphicon-envelope"></i> <%= user.local.email %>
+                    <br/> 
+                    <i class="glyphicon glyphicon-phone"></i> +14155773411
+                    <br/> 
+                    <i class="glyphicon glyphicon-globe"></i> www.bootsnipp.com 
+                </p>
         </div> 
-     </row> <!-- end row -->
+        <div class="col-sm-4">
+           <small><cite title="Source Title">CIS Deavila <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+           </br>
+           <small><cite title="Source Title">Room 100 1st grade <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+        </div>  
+  </div> <!-- end row-->
+  <hr>
+  <div class="col-sm-1">
+    <button class="btn btn-xs">Add</button>
+  </div> 
+
+ 
+
 </div>  <!-- end container -->
 
 
