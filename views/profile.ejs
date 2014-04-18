@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
       <!-- Filepicker.io Include -->
-    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+  <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
 
 
   </script>
@@ -28,6 +28,14 @@
            width: 50%;
            height: 50%;
          }
+
+         .col-sm-2.col-md-2.profilecontainer {
+            width: 127px; 
+            height: 137px; 
+            overflow: hidden; 
+         }
+
+         .col-sm-2.col-md-2.profilecontainer img { width: 100%; }
 	</style>
 </head>
 <body>
@@ -50,20 +58,16 @@
           You
           <button type="button" class="btn btn-primary btn-xs">Parent</button>
         </div>  
-    		<div class="col-sm-2 col-md-2">
+    		<div class="col-sm-2 col-md-2 profilecontainer">
                 <img id="profilepic" src="http://fng.hotcw.com/images/sil-male.png" 
                 alt="" class="img-rounded img-responsive" />
-                <input type="file" id="files" name="files[]"></input>
-                <h1><a href="#" id="upload-link">Upload all the things!</a></h1>
-               
-
-
         </div>
         <div class="col-sm-4 col-md-4">
                 <blockquote>
                     <p><%= user.local.name %></p> 
                 </blockquote>
                 <p> 
+                    <input type="file" id="files" name="files[]"></input>
                     <i class="glyphicon glyphicon-envelope"></i> <%= user.local.email %>
                     <br/> 
                     <i class="glyphicon glyphicon-phone"></i> +14155773411
@@ -130,6 +134,8 @@
 
         filepicker.pickAndStore({},{location: 's3'},function(fpfiles){
             console.log(JSON.stringify(fpfiles));
+            console.log(fpfiles.url)
+            $("#profilepic").attr("src", fpfiles.url);
         });
       });
     });

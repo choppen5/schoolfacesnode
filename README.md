@@ -34,8 +34,6 @@ Currrently desiging withan "Outside-in" approach.  The intention is to make the 
 
 ## Tech
 
-Currently only on HTML/CSS design. This repo began life as a Foundation github repo.  Using Foundation and Sass (also open to BootStrap) After a decent UI is created, need to a framework for authentication, data storage, back end etc. Considered and implmented a few of these in trial, not committed to any yet:
-- Node.js + Express + Mongo
-- Angular.js
-- Firebase + Angular for authenticaiton (no backend!)
-- Ruby Sinatra, Rails, and Padrino
+npm install
+
+You need to set an environment variable to a Mongo db.. if you deploy 
